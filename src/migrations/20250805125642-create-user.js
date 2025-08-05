@@ -22,7 +22,7 @@ module.exports = {
         allowNull : false,
         validate : {
           len : [8,50],
-        }
+        },
       },
       createdAt: {
         allowNull: false,
