@@ -12,7 +12,8 @@ const router = express.Router();
 //info-controller
 router.get('/info',
     AuthRequestMiddlewares.checkAuth, 
-    InfoController.info);
+    InfoController.info
+);
 
 router.use('/user', userRouter);
 

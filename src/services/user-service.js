@@ -78,6 +78,7 @@ async function isAuthenticated(token) {
          }
          console.log(error);
          throw new AppError('Something went wrong', StatusCodes.INTERNAL_SERVER_ERROR);
+
     }
 }
 
