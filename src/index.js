@@ -9,7 +9,7 @@ const app = express();
 
 const limiter = rateLimit({
   windowMs: 2 * 60 * 1000, // 2 minutes
-  limit: 3,
+  limit: 10 ,
   message: 'Too many requests, please try again later.',
 });
 

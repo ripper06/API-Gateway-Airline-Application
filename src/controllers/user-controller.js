@@ -23,6 +23,26 @@ async function signup(req,res){
     }
 }
 
+async function addRoletoUser(req,res){
+    try {
+        const User = await UserService.addRoletoUser({
+            role : req.body.role,
+            id : req.body.id,
+        });
+        SuccessResponse.data = User;
+        return res
+                .status(StatusCodes.CREATED)
+                .json(SuccessResponse);
+    } catch (error) {
+        console.log("Error in controller", error)
+        ErrorResponse.error = error;
+        return res
+                .status(error.statusCode  || StatusCodes.INTERNAL_SERVER_ERROR)
+                .json(ErrorResponse)
+    }
+}
+
+
 async function signin(req,res){
     try {
         const User = await UserService.signin({
@@ -43,7 +63,9 @@ async function signin(req,res){
 }
 
 
+
 module.exports = {
     signup,
     signin,
+    addRoletoUser
 }
